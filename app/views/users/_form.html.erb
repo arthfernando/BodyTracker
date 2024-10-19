@@ -1,0 +1,45 @@
+<%= form_with model: @user do |form| %>
+    <div>
+        <%= form.label :name %><br>
+        <%= form.text_field :name %>
+        <% @user.errors.full_messages_for(:name).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :email %><br>
+        <%= form.email_field :email %>
+        <% @user.errors.full_messages_for(:email).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :birth_date %><br>
+        <%= form.date_field :birth_date %>
+        <% @user.errors.full_messages_for(:birth_date).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :height %><br>
+        <%= form.number_field :height %>
+        <% @user.errors.full_messages_for(:height).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.label :weight %><br>
+        <%= form.number_field :weight %>
+        <% @user.errors.full_messages_for(:weight).each do |message| %>
+            <div><%= message %></div>
+        <% end %>
+    </div>
+
+    <div>
+        <%= form.submit %>
+    </div>
+<% end %>
